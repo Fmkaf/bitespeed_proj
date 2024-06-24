@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-    id: Number,
-    phoneNumber: String,
+    id: { type: Number, unique: true },
+    phoneNumber: Number,
     email: String,
     linkedId: Number,
     linkPrecedence: {
