@@ -12,4 +12,15 @@ const userIdentity = async (req, res) => {
     }
 }
 
-module.exports = { userIdentity }
+const contactForm = async (req, res) => {
+    try {
+        const response = await userIdentityService.contactForm()
+        res.status(200).send(response)
+    } catch (error) {
+        res.status(500).send({
+            message: error.message
+        })
+    }
+}
+
+module.exports = { userIdentity, contactForm }
